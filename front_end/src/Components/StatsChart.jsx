@@ -12,6 +12,7 @@ function StatsChart() {
     const fetchWeeklyStats = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/weekly-stats');
+        localStorage.setItem('loggedIn', 'true');
         if (!response.ok) {
           throw new Error('Failed to fetch weekly stats');
         }

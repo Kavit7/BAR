@@ -15,6 +15,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch dashboard statistics from your backend
+
     const fetchDashboardStats = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/dashboard-stats', {
@@ -22,7 +23,9 @@ const Dashboard = () => {
           credentials: 'include'
         });
         if (response.ok) {
+          localStorage.setItem('loggedIn', 'true');
           const data = await response.json();
+          
           setStats({
             totalExpenses: data.total_expenses || 0,
             totalSales: data.total_sales || 0,

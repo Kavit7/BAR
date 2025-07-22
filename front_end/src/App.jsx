@@ -1,7 +1,7 @@
 import './modify.css'
 import './App.css'
 
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Product from './Pages/Product';
 import Sale from './Pages/Sale';
@@ -13,7 +13,7 @@ import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
@@ -23,7 +23,7 @@ function App() {
         <Route path="/Report" element={<PrivateRoute><Report /></PrivateRoute>} />
         <Route path="/logout" element={<PrivateRoute><Logout /></PrivateRoute>} />
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 

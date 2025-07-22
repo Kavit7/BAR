@@ -30,6 +30,7 @@ const Product = () => {
         
         if (response.ok) {
           setData(await response.json());
+          localStorage.setItem('loggedIn', 'true');
           console.log("success");
         } else {
           console.log('failed');
@@ -68,6 +69,7 @@ const Product = () => {
       
       if (response.ok) {
         const data = await response.json();
+        localStorage.setItem('loggedIn', 'true');
         console.log(data.result);
         setShowModal(false);
         setNewProduct({ name: '', buying: '', selling: '', stock: '' });
@@ -89,6 +91,7 @@ const Product = () => {
       const datas = await response.json();
 
       if (response.ok && datas.result && datas.result.length > 0) {
+        localStorage.setItem('loggedIn', 'true');
         setEditData(datas.result[0]);
         setEditId(productId);
         Swal.fire("Updated!", datas.message)
@@ -111,6 +114,7 @@ const Product = () => {
 
       if (response.ok) {
         const result = await response.json();
+        localStorage.setItem('loggedIn', 'true');
         setEditId(null);
         setEditData({ name: '', selling: '', buying: '', stock: '' });
         Swal.fire("Product confirmation Update!",result.message)
@@ -145,7 +149,7 @@ const handleDelete = async (productId) => {
     });
 
     const data = await response.json();
-
+  localStorage.setItem('loggedIn', 'true');
     if (!response.ok) {
       throw new Error(data.error || "Delete failed");
     }

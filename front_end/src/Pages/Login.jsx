@@ -27,10 +27,6 @@ const Login = () => {
             if (response.ok) {
                 localStorage.setItem('loggedIn', 'true');
                 Swal.fire("Success",data.message)
-               window.history.pushState(null, '', window.location.href);
-window.onpopstate = () => {
-  window.history.go(1);
-};
 navigate('/dashboard');
             } else {
                 Swal.fire("Error",data.error,"warning")

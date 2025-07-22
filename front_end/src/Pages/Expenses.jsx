@@ -17,6 +17,7 @@ const Expenses = () => {
     try {
       const res = await fetch(`http://localhost:3000/api/expenses${filterDate ? `?date=${filterDate}` : ''}`,{ credentials: 'include'})
       const data = await res.json()
+      localStorage.setItem('loggedIn', 'true');
       setExpenses(data)
     } catch (err) {
       console.error(err)
@@ -40,6 +41,7 @@ const Expenses = () => {
         body: JSON.stringify(payload),
          credentials: 'include'
       })
+      localStorage.setItem('loggedIn', 'true');
       setDescription('')
       setAmount('')
       setEditId(null)
@@ -52,6 +54,7 @@ const Expenses = () => {
   const handleDelete = async (id) => {
     try {
       await fetch(`http://localhost:3000/api/expenses/${id}`, { method: 'DELETE', credentials: 'include' })
+      localStorage.setItem('loggedIn', 'true');
       fetchExpenses()
     } catch (err) {
       console.error(err)

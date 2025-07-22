@@ -18,8 +18,11 @@ const Sale = () => {
            credentials: 'include'
         });
 
+
         if (response.ok) {
+          localStorage.setItem('loggedIn', 'true');
           setData(await response.json());
+
           console.log("success");
         } else {
           console.log('failed');
@@ -70,6 +73,7 @@ const Sale = () => {
 
       const result = await response.json();
       if (response.ok) {
+        localStorage.setItem('loggedIn', 'true');
         Swal.fire("Message ...", result.message)  
         setTimeout(() => {
           window.location.reload();

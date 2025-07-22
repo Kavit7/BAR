@@ -8,14 +8,14 @@ const saltRounds = 10;
 const session = require('express-session');
 app.use(bodyParser.json())
 app.use(cors({
-    origin: 'http://localhost:5173', // your React/Vite frontend URL
+    origin: 'http://localhost:5173/Bar/', // your React/Vite frontend URL
     credentials: true
 }));
 app.use(express.json())
 const connection = mysql.createConnection({
-    host: 'sql103.infinityfree.com',
-        user: 'if0_39524031',
-        password: 'KVRojJR8rCCL'
+    host: 'localhost',
+    user: 'root',
+    password: ''
 });
 app.use(session({
     secret: 'Bar@Kavit123', // change this to something strong
@@ -94,10 +94,10 @@ connection.query(`CREATE TABLE IF NOT EXISTS product_sales_summary (
 
     // Connect to the created database
     const db = mysql.createConnection({
-        host: 'sql103.infinityfree.com',
-        user: 'if0_39524031',
-        password: 'KVRojJR8rCCL',
-        database: 'if0_39524031_business_tracker'
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'business_tracker'
     });
 
     db.connect((err) => {
@@ -158,7 +158,7 @@ const isAuthenticated = (req, res, next) => {
 }
 
 
-app.get('/product', (req, res) => {
+app.get('/product',isAuthenticated, (req, res) => {
     connection.query('SELECT * FROM products', (err, results) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -607,7 +607,7 @@ app.get('/logout', (req, res) => {
 });
 
 
-const PORT = 3306;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
