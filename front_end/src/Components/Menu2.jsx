@@ -16,7 +16,7 @@ const Menu2 = () => {
                         {menuItems.map((item, index) => (
                             <li
                                 key={index}
-                                className="text-green-500 hover:cursor-pointer lg:hover:bg-white px-2 font-bold rounded py-3 left-0 w-full lg:w-fit relative"
+                                className="text-[#34495e] hover:cursor-pointer lg:hover:bg-white px-2 font-bold rounded py-3 left-0 w-full lg:w-fit relative"
                                 onClick={() => handleItemClick(item.text)}
                             >
                                 <a className="flex items-center gap-2 justify-center md:justify-start" href={item.link || '#'} >

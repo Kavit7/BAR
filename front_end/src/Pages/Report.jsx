@@ -40,7 +40,7 @@ const Report = () => {
       <Header />
       <div className='flex flex-row h-screen overflow-hidden'>
         <div className='flex flex-1 overflow-hidden'><Menu2 /></div>
-        <div className='w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-blue-500 overflow-y-auto px-4 py-6'>
+        <div className='w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-[#f8f9f9] overflow-y-auto px-4 py-6'>
           <h1 className='headers font-bold text-xl mb-4 mt-10 text-white'>Report</h1>
           <div className='mb-4'>
             <input
@@ -66,7 +66,7 @@ const Report = () => {
 
               <h2 className='text-lg font-semibold mt-6 mb-2'>Product Sales</h2>
               <table className='w-full border text-white'>
-                <thead>
+                <thead className='bg-[#aed6f1]'>
                   <tr>
                     <th className='border p-2'>Product</th>
                     <th className='border p-2'>Quantity</th>

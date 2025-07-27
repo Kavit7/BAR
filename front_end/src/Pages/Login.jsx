@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Swal from 'sweetalert2';
+import { User } from 'lucide-react';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -39,14 +40,14 @@ navigate('/dashboard');
     };
 
     return (
-        <div className="flex flex-col h-screen overflow-hidden bg-blue-500">
+        <div className="flex flex-col h-screen overflow-hidden bg-[#f8f9f9]">
             {/* Header - Matching your dashboard style */}
             <Header/>
             
             {/* Login Form */}
             <div className="flex flex-1 items-center justify-center p-4">
                 <div className="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden">
-                    <div className="bg-blue-600 p-4 text-white">
+                    <div className="bg-[#5d6d7e] p-4 text-white">
                         <h2 className="text-xl font-bold text-center">Admin Login</h2>
                     </div>
                     
@@ -64,7 +65,7 @@ navigate('/dashboard');
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    className="w-full p-3 border border-[#a6acaf] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a6acaf]"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     required
@@ -75,10 +76,12 @@ navigate('/dashboard');
                                 <label className="block text-gray-700 text-sm font-medium mb-1">
                                     Password
                                 </label>
+                                
                                 <input
                                     type="password"
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    className="w-full p-3 border border-[#a6acaf] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a6acaf]"
                                     value={password}
+                                    
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
@@ -87,7 +90,7 @@ navigate('/dashboard');
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className={`w-full py-3 px-4 rounded-lg text-white font-bold ${loading ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'} transition duration-200`}
+                                className={`w-full py-3 px-4 rounded-lg text-white font-bold ${loading ? 'bg-[#5d6d7e]' : 'bg-[#5d6d7e] hover:bg-[#2e4053] hover:cursor-pointer'} transition duration-200`}
                             >
                                 {loading ? (
                                     <span className="flex items-center justify-center">

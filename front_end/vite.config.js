@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/Bar',
+ 
   plugins: [react(),
     tailwindcss(),
   ],
   server: {
     allowedHosts: ['72d167518bc8.ngrok-free.app'],
+   
   },
 })

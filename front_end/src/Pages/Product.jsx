@@ -170,12 +170,12 @@ const handleDelete = async (productId) => {
         <div className='flex flex-1 overflow-hidden' >
           <Menu2 />
         </div>
-        <div className="w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-blue-500 overflow-y-auto">
+        <div className="w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-[#f8f9f9] overflow-y-auto">
           <div className="flex justify-between items-center px-4 pt-4 mt-15">
             <h1 className='headers font-bold text-white text-xl md:text-2xl'>Product List Table</h1>
             <button 
               onClick={handleAddProduct}
-              className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg"
+              className="bg-[#17202a] hover:bg-[#5f6a6a] hover:cursor-pointer text-white font-medium px-4 py-2 rounded-lg"
             >
               Add Product
             </button>
@@ -193,7 +193,7 @@ const handleDelete = async (productId) => {
 
           <div className='overflow-x-auto px-4 pb-4'>
             <table className='mt-4 w-full max-w-4xl mx-auto text-xs sm:text-sm md:text-base border-collapse'>
-              <thead className='bg-blue-600'>
+              <thead className='bg-[#aed6f1]'>
                 <tr>
                   <th className='px-2 sm:px-3 md:px-4 py-2 border border-gray-300 text-white font-semibold'>Name</th>
                   <th className='px-2 sm:px-3 md:px-4 py-2 border border-gray-300 text-white font-semibold'>Buying Price</th>
@@ -212,13 +212,13 @@ const handleDelete = async (productId) => {
                     <td className='px-2 sm:px-3 md:px-4 py-2 border border-gray-300 text-center whitespace-nowrap'>
                       <button 
                         onClick={() => handleEdit(item.product_id)}
-                        className='bg-amber-500 hover:bg-amber-600 text-white font-medium px-2 py-1 rounded mr-1 sm:mr-2 text-xs sm:text-sm hover:cursor-pointer'
+                        className='bg-[#aed6f1] hover:bg-[#aed6f1] text-white font-medium px-2 py-1 rounded mr-1 sm:mr-2 text-xs sm:text-sm hover:cursor-pointer'
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelete(item.product_id)}
-                        className='bg-rose-600 hover:bg-rose-700 text-white font-medium px-2 py-1 rounded text-xs sm:text-sm hover:cursor-pointer'
+                        className='bg-[#CD5C5C] hover:bg-[#F08080] text-white font-medium px-2 py-1 rounded text-xs sm:text-sm hover:cursor-pointer'
                       >
                         Delete
                       </button>

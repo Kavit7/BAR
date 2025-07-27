@@ -55,7 +55,7 @@ const Dashboard = () => {
         </div>
 
         {/* Scrollable Content Area */}
-        <div className="w-[calc(100%-60px)] md:w-[90%] bg-blue-500 overflow-y-auto">
+        <div className="w-[calc(100%-60px)] md:w-[90%] bg-[#f8f9f9] overflow-y-auto">
           <div className="pt-16"> {/* Spacer for fixed header */}
             <h1 className='headers mt-4 md:mt-8 text-center font-bold text-white text-xl md:text-2xl italic'>
               Dashboard
@@ -63,14 +63,14 @@ const Dashboard = () => {
 
             {/* Stats Cards */}
             <div className='flex flex-col md:flex-row justify-center items-center gap-4 mt-6 md:mt-10 px-2 md:px-4'>
-              <div className='bg-green-200 w-[90%] md:w-[30%] p-4 md:p-6 rounded text-center font-bold text-lg md:text-2xl'>
+              <div className='bg-[#e8daef] w-[90%] md:w-[30%] p-4 md:p-6 rounded text-center font-bold text-lg md:text-2xl'>
                 Total Expenses: {stats.totalExpenses.toFixed(2)}
               </div>
-              <div className='bg-green-200 w-[90%] md:w-[30%] p-4 md:p-6 rounded text-center font-bold text-lg md:text-2xl'>
+              <div className='bg-[#85c1e9] w-[90%] md:w-[30%] p-4 md:p-6 rounded text-center font-bold text-lg md:text-2xl'>
                 Total Sales: {stats.totalSales.toFixed(2)}
               </div>
               <div className={`w-[90%] md:w-[30%] p-4 md:p-6 rounded text-center font-bold text-lg md:text-2xl ${
-                stats.profit >= 0 ? 'bg-green-200' : 'bg-red-200'
+                stats.profit >= 0 ? 'bg-[#1abc9c]' : 'bg-[#ec7063]'
               }`}>
                 {stats.profit >= 0 ? 'Profit: ' : 'Loss: '}
                 {Math.abs(stats.profit).toFixed(2)}

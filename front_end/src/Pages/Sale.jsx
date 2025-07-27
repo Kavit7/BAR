@@ -94,7 +94,7 @@ const Sale = () => {
         <div className='flex flex-1 overflow-hidden'>
           <Menu2 />
         </div>
-        <div className="w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-blue-500 overflow-y-auto px-4 py-6">
+        <div className="w-[calc(100%-60px)] md:w-[calc(100%-80px)] lg:w-[90%] bg-[#f8f9f9] overflow-y-auto px-4 py-6">
           <h1 className='headers mt-10 font-bold text-white text-xl md:text-2xl mb-4'>
             Select Product from the Drop menu
           </h1>
